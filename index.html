@@ -10,35 +10,35 @@
   />
   <style>
     :root {
-      /* Mojave palette */
       --red-canyon: #c68a64;
       --sun-baked: #d8b79c;
       --dried-cactus: #8c8a6e;
       --aeolian-sand: #d1a58c;
       --wilderness: #b57c4f;
 
-      /* neutrals */
       --bg: #faf6f1;
       --bg-soft: #f4ede6;
-      --card: rgba(255, 255, 255, 0.82);
-      --card-solid: #ffffff;
+      --card: rgba(255, 255, 255, 0.84);
       --text: #2f2b26;
       --muted: #6f6a63;
       --line: rgba(47, 43, 38, 0.10);
       --white: #ffffff;
 
-      /* gradients using the full palette */
       --hero-grad:
         linear-gradient(135deg,
           var(--dried-cactus) 0%,
-          var(--aeolian-sand) 36%,
-          var(--red-canyon) 68%,
+          var(--dried-cactus) 28%,
+          var(--aeolian-sand) 52%,
+          var(--red-canyon) 78%,
           var(--wilderness) 100%);
+
       --accent-grad:
         linear-gradient(135deg,
-          var(--red-canyon) 0%,
-          var(--wilderness) 55%,
+          var(--dried-cactus) 0%,
+          var(--wilderness) 42%,
+          var(--red-canyon) 78%,
           var(--sun-baked) 100%);
+
       --soft-grad:
         linear-gradient(180deg, #fffaf5 0%, var(--bg) 100%);
 
@@ -68,9 +68,10 @@
       font-family: Inter, Arial, Helvetica, sans-serif;
       color: var(--text);
       background:
-        radial-gradient(circle at top left, rgba(198, 138, 100, 0.10), transparent 28%),
-        radial-gradient(circle at bottom right, rgba(140, 138, 110, 0.12), transparent 24%),
-        radial-gradient(circle at 80% 30%, rgba(209, 165, 140, 0.10), transparent 18%),
+        radial-gradient(circle at top left, rgba(198, 138, 100, 0.08), transparent 28%),
+        radial-gradient(circle at bottom right, rgba(140, 138, 110, 0.16), transparent 24%),
+        radial-gradient(circle at 80% 30%, rgba(209, 165, 140, 0.08), transparent 18%),
+        radial-gradient(circle at 25% 75%, rgba(140, 138, 110, 0.10), transparent 20%),
         var(--soft-grad);
       line-height: 1.6;
     }
@@ -100,9 +101,9 @@
       gap: 8px;
       padding: 10px 16px;
       border-radius: 999px;
-      background: rgba(198, 138, 100, 0.10);
-      border: 1px solid rgba(181, 124, 79, 0.18);
-      color: var(--wilderness);
+      background: rgba(140, 138, 110, 0.12);
+      border: 1px solid rgba(140, 138, 110, 0.24);
+      color: var(--dried-cactus);
       font-size: 0.82rem;
       font-weight: 800;
       letter-spacing: 1px;
@@ -140,12 +141,12 @@
     .btn-primary {
       background: var(--accent-grad);
       color: var(--white);
-      box-shadow: 0 14px 28px rgba(181, 124, 79, 0.24);
+      box-shadow: 0 14px 28px rgba(140, 138, 110, 0.24);
     }
 
     .btn-primary:hover {
       transform: translateY(-2px);
-      box-shadow: 0 18px 34px rgba(181, 124, 79, 0.28);
+      box-shadow: 0 18px 34px rgba(140, 138, 110, 0.28);
     }
 
     .btn-secondary {
@@ -161,7 +162,7 @@
 
     .btn-light {
       background: var(--white);
-      color: var(--wilderness);
+      color: var(--dried-cactus);
       box-shadow: var(--shadow-sm);
     }
 
@@ -193,7 +194,7 @@
       position: sticky;
       top: 0;
       z-index: 999;
-      background: rgba(255, 250, 245, 0.86);
+      background: rgba(255, 250, 245, 0.88);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--line);
     }
@@ -223,9 +224,9 @@
       font-weight: 900;
       background:
         linear-gradient(135deg,
-          var(--red-canyon) 0%,
-          var(--aeolian-sand) 35%,
-          var(--dried-cactus) 70%,
+          var(--dried-cactus) 0%,
+          var(--dried-cactus) 32%,
+          var(--red-canyon) 70%,
           var(--wilderness) 100%);
       box-shadow: var(--shadow-sm);
     }
@@ -258,16 +259,17 @@
     }
 
     .nav-links a:hover {
-      color: var(--wilderness);
+      color: var(--dried-cactus);
     }
 
     .hero {
       position: relative;
       overflow: hidden;
       background:
-        radial-gradient(circle at 15% 15%, rgba(216,183,156,0.22), transparent 18%),
-        radial-gradient(circle at 85% 20%, rgba(209,165,140,0.20), transparent 18%),
-        radial-gradient(circle at 80% 80%, rgba(198,138,100,0.18), transparent 20%),
+        radial-gradient(circle at 15% 15%, rgba(140,138,110,0.26), transparent 18%),
+        radial-gradient(circle at 85% 20%, rgba(209,165,140,0.18), transparent 18%),
+        radial-gradient(circle at 80% 80%, rgba(198,138,100,0.16), transparent 20%),
+        radial-gradient(circle at 30% 85%, rgba(140,138,110,0.18), transparent 22%),
         var(--hero-grad);
       color: var(--white);
       padding: 108px 0 92px;
@@ -386,8 +388,8 @@
     .contact-form input:focus,
     .contact-form textarea:focus,
     .contact-form select:focus {
-      border-color: rgba(181, 124, 79, 0.35);
-      box-shadow: 0 0 0 4px rgba(198, 138, 100, 0.10);
+      border-color: rgba(140, 138, 110, 0.40);
+      box-shadow: 0 0 0 4px rgba(140, 138, 110, 0.10);
     }
 
     .mini-form textarea,
@@ -414,7 +416,7 @@
       gap: 16px;
       padding: 20px;
       border-radius: 28px;
-      background: rgba(255, 250, 245, 0.72);
+      background: rgba(255, 250, 245, 0.74);
       backdrop-filter: blur(18px);
       border: 1px solid rgba(255,255,255,0.55);
       box-shadow: var(--shadow-lg);
@@ -426,9 +428,9 @@
       background: linear-gradient(180deg, rgba(255,255,255,0.88), rgba(255,255,255,0.68));
     }
 
-    .stat-box:nth-child(1) strong { color: var(--red-canyon); }
+    .stat-box:nth-child(1) strong { color: var(--dried-cactus); }
     .stat-box:nth-child(2) strong { color: var(--dried-cactus); }
-    .stat-box:nth-child(3) strong { color: var(--aeolian-sand); }
+    .stat-box:nth-child(3) strong { color: var(--red-canyon); }
     .stat-box:nth-child(4) strong { color: var(--wilderness); }
 
     .stat-box strong {
@@ -515,23 +517,23 @@
       box-shadow: var(--shadow-sm);
     }
 
-    .icon.one   { background: linear-gradient(135deg, var(--red-canyon), var(--wilderness)); }
+    .icon.one   { background: linear-gradient(135deg, var(--dried-cactus), var(--wilderness)); }
     .icon.two   { background: linear-gradient(135deg, var(--dried-cactus), var(--sun-baked)); color: var(--text); }
-    .icon.three { background: linear-gradient(135deg, var(--aeolian-sand), var(--red-canyon)); }
-    .icon.four  { background: linear-gradient(135deg, var(--wilderness), var(--dried-cactus)); }
+    .icon.three { background: linear-gradient(135deg, var(--dried-cactus), var(--red-canyon)); }
+    .icon.four  { background: linear-gradient(135deg, var(--dried-cactus), var(--aeolian-sand)); color: var(--text); }
 
     .soft-section {
       background:
-        radial-gradient(circle at top right, rgba(216,183,156,0.10), transparent 22%),
-        radial-gradient(circle at bottom left, rgba(140,138,110,0.10), transparent 22%),
+        radial-gradient(circle at top right, rgba(216,183,156,0.08), transparent 22%),
+        radial-gradient(circle at bottom left, rgba(140,138,110,0.14), transparent 22%),
         linear-gradient(180deg, rgba(255,255,255,0.35), rgba(244,237,230,0.72));
     }
 
     .dark-section {
       background:
-        radial-gradient(circle at top left, rgba(216,183,156,0.12), transparent 18%),
-        radial-gradient(circle at bottom right, rgba(209,165,140,0.14), transparent 18%),
-        linear-gradient(135deg, var(--dried-cactus) 0%, var(--wilderness) 55%, var(--red-canyon) 100%);
+        radial-gradient(circle at top left, rgba(216,183,156,0.10), transparent 18%),
+        radial-gradient(circle at bottom right, rgba(209,165,140,0.12), transparent 18%),
+        linear-gradient(135deg, var(--dried-cactus) 0%, var(--dried-cactus) 46%, var(--wilderness) 76%, var(--red-canyon) 100%);
       color: var(--white);
     }
 
@@ -555,9 +557,9 @@
       margin: 18px 0 22px;
       padding: 11px 16px;
       border-radius: 999px;
-      background: linear-gradient(135deg, rgba(216,183,156,0.26), rgba(198,138,100,0.14));
-      border: 1px solid rgba(181,124,79,0.14);
-      color: var(--wilderness);
+      background: linear-gradient(135deg, rgba(140,138,110,0.18), rgba(198,138,100,0.14));
+      border: 1px solid rgba(140,138,110,0.20);
+      color: var(--dried-cactus);
       font-weight: 900;
     }
 
@@ -592,8 +594,8 @@
       color: var(--white);
       font-weight: 900;
       margin-bottom: 16px;
-      background: linear-gradient(135deg, var(--red-canyon), var(--wilderness));
-      box-shadow: 0 14px 24px rgba(181, 124, 79, 0.22);
+      background: linear-gradient(135deg, var(--dried-cactus), var(--wilderness));
+      box-shadow: 0 14px 24px rgba(140, 138, 110, 0.22);
     }
 
     .testimonial {
@@ -604,7 +606,7 @@
 
     .testimonial-name {
       font-weight: 900;
-      color: var(--wilderness);
+      color: var(--dried-cactus);
     }
 
     .faq-item h3 {
@@ -627,7 +629,7 @@
     }
 
     .cta-ribbon {
-      background: linear-gradient(135deg, var(--red-canyon) 0%, var(--wilderness) 45%, var(--sun-baked) 100%);
+      background: linear-gradient(135deg, var(--dried-cactus) 0%, var(--dried-cactus) 36%, var(--wilderness) 72%, var(--red-canyon) 100%);
       color: var(--white);
       padding: 30px 0;
       box-shadow: inset 0 1px 0 rgba(255,255,255,0.12);
