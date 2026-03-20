@@ -3,28 +3,35 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Boomtown Bookkeeper | Bookkeeping for Small Businesses</title>
+  <title>Boomtown Bookkeeper | Beautiful Books for Growing Businesses</title>
   <meta
     name="description"
-    content="Boomtown Bookkeeper helps small business owners stay organized with clean books, monthly reporting, reconciliations, and bookkeeping support."
+    content="Boomtown Bookkeeper helps small business owners bring beauty, order, and clarity to their books with modern bookkeeping support."
   />
   <style>
     :root {
-      --bg: #f8fafc;
-      --surface: #ffffff;
-      --surface-2: #eef4f8;
-      --text: #16202a;
-      --muted: #5c6b77;
-      --primary: #0f3d56;
-      --primary-2: #174f70;
-      --accent: #d7a94b;
-      --accent-dark: #b8882f;
-      --border: #dce5eb;
-      --success: #1f7a4d;
-      --shadow: 0 14px 40px rgba(16, 35, 52, 0.10);
-      --radius: 18px;
-      --radius-sm: 12px;
-      --max: 1180px;
+      --cream: #f8f2e8;
+      --ivory: #fffaf4;
+      --linen: #efe3d2;
+      --sage: #87977e;
+      --sage-dark: #66725f;
+      --olive: #6e7b63;
+      --dusty-blue: #8097a6;
+      --slate-blue: #5f7380;
+      --terracotta: #ca7f5e;
+      --terracotta-dark: #b66745;
+      --gold: #d8b46a;
+      --gold-dark: #c69b47;
+      --ink: #2f312d;
+      --muted: #6b685f;
+      --white: #ffffff;
+      --border: rgba(82, 75, 61, 0.12);
+      --shadow: 0 18px 50px rgba(76, 63, 43, 0.10);
+      --shadow-soft: 0 10px 30px rgba(76, 63, 43, 0.08);
+      --radius-xl: 28px;
+      --radius-lg: 22px;
+      --radius-md: 16px;
+      --max: 1200px;
     }
 
     * {
@@ -38,15 +45,15 @@
     }
 
     body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: var(--bg);
-      color: var(--text);
+      font-family: "Trebuchet MS", "Segoe UI", Arial, sans-serif;
+      background: linear-gradient(180deg, #fffdf9 0%, #f8f2e8 100%);
+      color: var(--ink);
       line-height: 1.6;
     }
 
     a {
-      color: inherit;
       text-decoration: none;
+      color: inherit;
     }
 
     img {
@@ -60,83 +67,109 @@
     }
 
     .section {
-      padding: 78px 0;
+      padding: 88px 0;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      font-size: 0.82rem;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      color: var(--terracotta-dark);
+      background: rgba(202, 127, 94, 0.12);
+      border: 1px solid rgba(202, 127, 94, 0.18);
+      border-radius: 999px;
+      padding: 10px 16px;
+      font-weight: 700;
+      margin-bottom: 18px;
     }
 
     .section-title {
-      font-size: 2.25rem;
-      line-height: 1.15;
-      margin-bottom: 14px;
+      font-size: 2.8rem;
+      line-height: 1.08;
+      margin-bottom: 16px;
+      color: var(--ink);
       text-align: center;
-      color: var(--primary);
     }
 
     .section-subtitle {
       max-width: 760px;
-      margin: 0 auto 46px;
+      margin: 0 auto 48px;
       text-align: center;
       color: var(--muted);
-      font-size: 1.05rem;
+      font-size: 1.08rem;
     }
 
     .btn {
       display: inline-block;
-      border: none;
-      border-radius: 12px;
       padding: 15px 24px;
+      border-radius: 999px;
       font-weight: 700;
       font-size: 1rem;
-      cursor: pointer;
       transition: 0.25s ease;
+      border: none;
+      cursor: pointer;
       text-align: center;
     }
 
     .btn-primary {
-      background: var(--accent);
-      color: #1a1a1a;
+      background: linear-gradient(135deg, var(--terracotta), var(--gold));
+      color: #fff;
+      box-shadow: 0 14px 28px rgba(202, 127, 94, 0.24);
     }
 
     .btn-primary:hover {
-      background: var(--accent-dark);
-      transform: translateY(-1px);
+      transform: translateY(-2px);
+      filter: brightness(1.02);
     }
 
     .btn-secondary {
-      background: transparent;
-      color: #ffffff;
-      border: 2px solid rgba(255,255,255,0.55);
+      background: rgba(255,255,255,0.28);
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.36);
+      backdrop-filter: blur(8px);
     }
 
     .btn-secondary:hover {
-      background: rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.36);
+    }
+
+    .btn-cream {
+      background: var(--ivory);
+      color: var(--terracotta-dark);
+      border: 1px solid rgba(202,127,94,0.18);
+    }
+
+    .btn-cream:hover {
+      background: #fff;
     }
 
     .topbar {
-      background: var(--primary);
-      color: #ffffff;
+      background: linear-gradient(90deg, var(--sage-dark), var(--slate-blue));
+      color: #fff;
+      padding: 12px 0;
       font-size: 0.92rem;
-      padding: 10px 0;
     }
 
     .topbar-wrap {
       display: flex;
       justify-content: space-between;
+      align-items: center;
       gap: 16px;
       flex-wrap: wrap;
-      align-items: center;
     }
 
     header {
       position: sticky;
       top: 0;
       z-index: 999;
-      background: rgba(255,255,255,0.96);
-      backdrop-filter: blur(10px);
+      background: rgba(255, 250, 244, 0.88);
+      backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
     }
 
     .nav {
-      min-height: 76px;
+      min-height: 82px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -146,36 +179,37 @@
     .brand {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 14px;
     }
 
     .brand-mark {
-      width: 44px;
-      height: 44px;
-      border-radius: 12px;
-      background: linear-gradient(135deg, var(--primary), var(--primary-2));
-      color: #ffffff;
+      width: 52px;
+      height: 52px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, var(--sage), var(--dusty-blue));
+      color: #fff;
       display: grid;
       place-items: center;
-      font-weight: 700;
-      font-size: 1.1rem;
-      box-shadow: var(--shadow);
+      font-size: 1.15rem;
+      font-weight: 800;
+      box-shadow: var(--shadow-soft);
     }
 
     .brand-text {
-      display: flex;
-      flex-direction: column;
-      line-height: 1.1;
+      line-height: 1.05;
     }
 
     .brand-text strong {
-      color: var(--primary);
-      font-size: 1.1rem;
+      display: block;
+      font-size: 1.16rem;
+      color: var(--ink);
+      letter-spacing: 0.2px;
     }
 
     .brand-text span {
+      display: block;
+      font-size: 0.9rem;
       color: var(--muted);
-      font-size: 0.88rem;
     }
 
     .nav-links {
@@ -186,76 +220,81 @@
     }
 
     .nav-links a {
-      font-weight: 600;
-      color: var(--text);
+      font-weight: 700;
+      color: var(--ink);
     }
 
     .nav-links a:hover {
-      color: var(--primary);
+      color: var(--terracotta-dark);
     }
 
     .hero {
+      position: relative;
+      overflow: hidden;
       background:
-        linear-gradient(rgba(13, 39, 56, 0.88), rgba(13, 39, 56, 0.78)),
-        linear-gradient(135deg, #234d67, #0f3d56);
-      color: #ffffff;
-      padding: 88px 0 72px;
+        radial-gradient(circle at top left, rgba(216,180,106,0.22), transparent 35%),
+        radial-gradient(circle at bottom right, rgba(128,151,166,0.24), transparent 30%),
+        linear-gradient(135deg, #718476 0%, #7f95a4 100%);
+      color: #fff;
+      padding: 96px 0 82px;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(rgba(41, 49, 45, 0.15), rgba(41, 49, 45, 0.18));
+      pointer-events: none;
+    }
+
+    .hero .container {
+      position: relative;
+      z-index: 1;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 38px;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 34px;
       align-items: center;
     }
 
-    .eyebrow {
-      display: inline-block;
-      margin-bottom: 18px;
-      padding: 7px 12px;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.12);
-      border: 1px solid rgba(255,255,255,0.18);
-      font-size: 0.88rem;
-      font-weight: 700;
-      letter-spacing: 0.2px;
-    }
-
     .hero h1 {
-      font-size: 3.2rem;
-      line-height: 1.08;
+      font-size: 3.6rem;
+      line-height: 1.02;
       margin-bottom: 18px;
+      max-width: 760px;
     }
 
     .hero p {
-      color: rgba(255,255,255,0.88);
-      font-size: 1.08rem;
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.92);
       max-width: 700px;
-      margin-bottom: 26px;
+      margin-bottom: 28px;
     }
 
     .hero-points {
+      list-style: none;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 12px 18px;
-      list-style: none;
-      margin-bottom: 28px;
+      gap: 12px 16px;
+      margin-bottom: 30px;
     }
 
     .hero-points li {
       position: relative;
-      padding-left: 26px;
-      color: rgba(255,255,255,0.92);
-      font-weight: 600;
+      padding-left: 28px;
+      font-weight: 700;
+      color: rgba(255,255,255,0.95);
     }
 
     .hero-points li::before {
-      content: "✔";
+      content: "✦";
       position: absolute;
       left: 0;
       top: 0;
-      color: #ffd37a;
-      font-weight: 700;
+      color: #fff2cf;
     }
 
     .hero-actions {
@@ -265,16 +304,17 @@
     }
 
     .hero-card {
-      background: rgba(255,255,255,0.98);
-      color: var(--text);
-      border-radius: var(--radius);
-      padding: 28px;
-      box-shadow: 0 24px 50px rgba(0,0,0,0.22);
+      background: rgba(255, 250, 244, 0.92);
+      color: var(--ink);
+      border: 1px solid rgba(255,255,255,0.34);
+      border-radius: var(--radius-xl);
+      padding: 30px;
+      box-shadow: 0 24px 60px rgba(44, 40, 31, 0.18);
     }
 
     .hero-card h3 {
-      color: var(--primary);
-      font-size: 1.45rem;
+      font-size: 1.7rem;
+      color: var(--slate-blue);
       margin-bottom: 10px;
     }
 
@@ -284,7 +324,8 @@
       font-size: 0.98rem;
     }
 
-    .mini-form {
+    .mini-form,
+    .contact-form {
       display: grid;
       gap: 12px;
     }
@@ -295,13 +336,13 @@
     .contact-form textarea,
     .contact-form select {
       width: 100%;
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 14px 14px;
+      padding: 15px 16px;
+      border-radius: 14px;
+      border: 1px solid rgba(95, 115, 128, 0.18);
+      background: rgba(255,255,255,0.92);
       font-size: 1rem;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #ffffff;
-      color: var(--text);
+      color: var(--ink);
+      font-family: inherit;
     }
 
     .mini-form textarea,
@@ -310,36 +351,54 @@
       resize: vertical;
     }
 
-    .mini-note {
+    .note {
+      font-size: 0.88rem;
       color: var(--muted);
-      font-size: 0.86rem;
-      margin-top: 10px;
     }
 
-    .trust-strip {
-      background: #ffffff;
-      border-bottom: 1px solid var(--border);
+    .floating-band {
+      margin-top: -28px;
+      position: relative;
+      z-index: 2;
     }
 
-    .trust-wrap {
+    .floating-wrap {
+      background: var(--ivory);
+      border: 1px solid var(--border);
+      border-radius: 26px;
+      box-shadow: var(--shadow);
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 16px;
-      padding: 22px 0;
+      padding: 20px;
     }
 
-    .trust-item {
+    .floating-item {
       text-align: center;
-      font-weight: 700;
-      color: var(--primary);
-      background: var(--surface-2);
-      border: 1px solid var(--border);
-      padding: 14px;
-      border-radius: 14px;
+      background: linear-gradient(180deg, #fff, #fbf4ea);
+      border: 1px solid rgba(82,75,61,0.08);
+      border-radius: 18px;
+      padding: 20px 14px;
+    }
+
+    .floating-item strong {
+      display: block;
+      font-size: 1.04rem;
+      color: var(--terracotta-dark);
+      margin-bottom: 4px;
+    }
+
+    .floating-item span {
+      color: var(--muted);
+      font-size: 0.94rem;
     }
 
     .cards-3,
-    .cards-4 {
+    .cards-4,
+    .steps-grid,
+    .faq-grid,
+    .contact-grid,
+    .offer-grid {
       display: grid;
       gap: 24px;
     }
@@ -352,122 +411,140 @@
       grid-template-columns: repeat(4, 1fr);
     }
 
-    .card {
-      background: var(--surface);
+    .offer-grid {
+      grid-template-columns: 1fr 0.95fr;
+      align-items: start;
+    }
+
+    .steps-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .faq-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .contact-grid {
+      grid-template-columns: 0.95fr 1.05fr;
+      align-items: start;
+    }
+
+    .card,
+    .offer-box,
+    .faq-item,
+    .contact-card,
+    .step-card {
+      background: rgba(255,255,255,0.72);
+      backdrop-filter: blur(5px);
       border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 28px;
-      box-shadow: var(--shadow);
+      border-radius: var(--radius-lg);
+      padding: 30px;
+      box-shadow: var(--shadow-soft);
     }
 
-    .card h3 {
-      color: var(--primary);
+    .card h3,
+    .offer-box h3,
+    .faq-item h3,
+    .contact-card h3,
+    .step-card h3 {
       margin-bottom: 12px;
-      font-size: 1.28rem;
+      font-size: 1.35rem;
+      color: var(--slate-blue);
     }
 
-    .card p {
+    .card p,
+    .offer-box p,
+    .faq-item p,
+    .contact-card p,
+    .step-card p {
       color: var(--muted);
     }
 
     .icon {
-      width: 50px;
-      height: 50px;
+      width: 54px;
+      height: 54px;
       display: grid;
       place-items: center;
-      border-radius: 14px;
-      background: var(--surface-2);
-      color: var(--primary);
-      font-size: 1.3rem;
+      border-radius: 16px;
+      background: linear-gradient(135deg, rgba(216,180,106,0.22), rgba(202,127,94,0.20));
+      color: var(--terracotta-dark);
+      font-weight: 800;
       margin-bottom: 16px;
-      font-weight: 700;
+      font-size: 1.1rem;
     }
 
-    .offer-wrap {
-      display: grid;
-      grid-template-columns: 1fr 0.9fr;
-      gap: 28px;
-      align-items: start;
+    .soft-section {
+      background:
+        radial-gradient(circle at top right, rgba(202,127,94,0.08), transparent 28%),
+        radial-gradient(circle at bottom left, rgba(135,151,126,0.10), transparent 32%),
+        linear-gradient(180deg, #fffaf4 0%, #f7efe3 100%);
     }
 
-    .offer-box {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 34px;
-      box-shadow: var(--shadow);
+    .accent-section {
+      background:
+        linear-gradient(135deg, rgba(111, 128, 103, 0.92), rgba(95, 115, 128, 0.94));
+      color: #fff;
     }
 
-    .price-tag {
+    .accent-section .section-title,
+    .accent-section .section-subtitle,
+    .accent-section h3,
+    .accent-section p {
+      color: #fff;
+    }
+
+    .accent-card {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.16);
+      border-radius: var(--radius-lg);
+      padding: 26px;
+      backdrop-filter: blur(8px);
+    }
+
+    .price-pill {
       display: inline-block;
-      margin: 16px 0 22px;
-      font-weight: 700;
-      color: var(--primary);
-      font-size: 1.08rem;
-      background: var(--surface-2);
-      padding: 10px 14px;
+      margin: 18px 0 20px;
+      padding: 10px 16px;
       border-radius: 999px;
+      background: linear-gradient(135deg, rgba(216,180,106,0.22), rgba(202,127,94,0.18));
+      color: var(--terracotta-dark);
+      font-weight: 800;
+      border: 1px solid rgba(202,127,94,0.12);
     }
 
     .check-list {
       list-style: none;
       display: grid;
       gap: 12px;
+      margin-top: 8px;
     }
 
     .check-list li {
       position: relative;
       padding-left: 28px;
-      color: var(--text);
+      color: var(--ink);
     }
 
     .check-list li::before {
-      content: "✔";
+      content: "✓";
       position: absolute;
       left: 0;
       top: 0;
-      color: var(--success);
-      font-weight: 700;
+      color: var(--sage-dark);
+      font-weight: 900;
     }
 
-    .dark-section {
-      background: linear-gradient(135deg, #143e57, #0d3044);
-      color: #ffffff;
-    }
-
-    .dark-section .section-title,
-    .dark-section h3 {
-      color: #ffffff;
-    }
-
-    .dark-section .section-subtitle,
-    .dark-section p {
-      color: rgba(255,255,255,0.85);
-    }
-
-    .dark-card {
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: var(--radius);
-      padding: 26px;
-    }
-
-    .steps {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-    }
-
-    .step-num {
-      width: 46px;
-      height: 46px;
+    .step-number {
+      width: 50px;
+      height: 50px;
       border-radius: 50%;
-      background: var(--accent);
-      color: #1a1a1a;
       display: grid;
       place-items: center;
-      font-weight: 700;
+      background: linear-gradient(135deg, var(--terracotta), var(--gold));
+      color: #fff;
+      font-weight: 800;
       margin-bottom: 16px;
+      box-shadow: 0 12px 24px rgba(202,127,94,0.18);
     }
 
     .testimonial {
@@ -477,35 +554,8 @@
     }
 
     .testimonial-name {
-      font-weight: 700;
-      color: var(--primary);
-    }
-
-    .faq-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 22px;
-    }
-
-    .faq-item {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 24px;
-      box-shadow: var(--shadow);
-    }
-
-    .faq-item h3 {
-      font-size: 1.08rem;
-      color: var(--primary);
-      margin-bottom: 10px;
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
-      gap: 28px;
-      align-items: start;
+      font-weight: 800;
+      color: var(--terracotta-dark);
     }
 
     .contact-info p {
@@ -514,60 +564,56 @@
     }
 
     .contact-info strong {
-      color: var(--primary);
-    }
-
-    .contact-form {
-      display: grid;
-      gap: 14px;
+      color: var(--ink);
     }
 
     .contact-form .row {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 14px;
+      gap: 12px;
     }
 
-    .cta-band {
-      background: linear-gradient(135deg, var(--accent), #e4bc68);
-      padding: 26px 0;
+    .cta-ribbon {
+      background: linear-gradient(135deg, var(--terracotta), var(--gold));
+      padding: 28px 0;
+      color: #fff;
     }
 
-    .cta-band-wrap {
+    .cta-wrap {
       display: flex;
       justify-content: space-between;
-      gap: 18px;
       align-items: center;
+      gap: 18px;
       flex-wrap: wrap;
     }
 
-    .cta-band h3 {
-      font-size: 1.45rem;
-      color: #1c1c1c;
+    .cta-wrap h3 {
+      font-size: 1.7rem;
+      line-height: 1.1;
+      margin-bottom: 6px;
     }
 
-    .cta-band p {
-      color: #2d2d2d;
-      font-weight: 600;
+    .cta-wrap p {
+      opacity: 0.92;
     }
 
     footer {
-      background: #0c1d29;
-      color: rgba(255,255,255,0.84);
-      padding: 34px 0;
+      background: #435047;
+      color: rgba(255,255,255,0.9);
       text-align: center;
+      padding: 34px 0;
       font-size: 0.95rem;
     }
 
     @media (max-width: 1080px) {
       .hero-grid,
-      .offer-wrap,
+      .offer-grid,
       .contact-grid,
       .faq-grid,
       .cards-4,
       .cards-3,
-      .steps,
-      .trust-wrap {
+      .steps-grid,
+      .floating-wrap {
         grid-template-columns: 1fr;
       }
 
@@ -577,7 +623,7 @@
       }
 
       .hero h1 {
-        font-size: 2.65rem;
+        font-size: 2.8rem;
       }
     }
 
@@ -593,23 +639,23 @@
       }
 
       .hero {
-        padding: 74px 0 58px;
+        padding: 76px 0 62px;
       }
 
       .hero h1 {
-        font-size: 2.15rem;
+        font-size: 2.2rem;
       }
 
       .section {
-        padding: 64px 0;
+        padding: 68px 0;
       }
 
       .section-title {
-        font-size: 1.9rem;
+        font-size: 2.1rem;
       }
 
       .hero-actions .btn,
-      .cta-band-wrap .btn {
+      .cta-wrap .btn {
         width: 100%;
       }
     }
@@ -619,7 +665,7 @@
 
   <div class="topbar">
     <div class="container topbar-wrap">
-      <div>Helping small businesses stay organized, accurate, and ready to grow.</div>
+      <div>Warm, modern bookkeeping support for small businesses that want more clarity and less chaos.</div>
       <div>Email: info@boomtownbookkeeper.com | Phone: (000) 000-0000</div>
     </div>
   </div>
@@ -630,7 +676,7 @@
         <div class="brand-mark">BB</div>
         <div class="brand-text">
           <strong>Boomtown Bookkeeper</strong>
-          <span>Clear books. Stronger business.</span>
+          <span>Beautiful books for growing businesses</span>
         </div>
       </a>
 
@@ -638,8 +684,8 @@
         <a href="#services">Services</a>
         <a href="#offer">Offer</a>
         <a href="#process">Process</a>
-        <a href="#faq">FAQ</a>
-        <a href="#contact" class="btn btn-primary">Get a Consultation</a>
+        <a href="#contact">Contact</a>
+        <a href="#contact" class="btn btn-cream">Get Started</a>
       </nav>
     </div>
   </header>
@@ -647,60 +693,80 @@
   <section class="hero">
     <div class="container hero-grid">
       <div>
-        <div class="eyebrow">Reliable bookkeeping for small businesses</div>
-        <h1>Stop Guessing at Your Numbers. Get Clean, Organized Books You Can Actually Use.</h1>
+        <div class="eyebrow">French-country inspired bookkeeping</div>
+        <h1>Order for your books. Breathing room for your business.</h1>
         <p>
-          Boomtown Bookkeeper helps business owners clean up messy books, stay current each month,
-          and get the financial clarity they need to make better business decisions with confidence.
+          Boomtown Bookkeeper helps small business owners bring beauty, calm, and structure
+          to their bookkeeping with a modern, supportive approach that feels clear instead of clinical.
         </p>
 
         <ul class="hero-points">
           <li>Monthly bookkeeping support</li>
-          <li>Account reconciliation</li>
-          <li>Book cleanup services</li>
-          <li>Simple, readable reporting</li>
+          <li>Catch-up and cleanup services</li>
+          <li>Reconciliations and reporting</li>
+          <li>Clear communication and guidance</li>
         </ul>
 
         <div class="hero-actions">
-          <a href="#contact" class="btn btn-primary">Request a Free Consultation</a>
-          <a href="#offer" class="btn btn-secondary">See What’s Included</a>
+          <a href="#contact" class="btn btn-primary">Request a Consultation</a>
+          <a href="#offer" class="btn btn-secondary">See the Package</a>
         </div>
       </div>
 
       <div class="hero-card">
-        <h3>Tell Us What You Need</h3>
-        <p>Use this quick form to start the conversation and let us know where your bookkeeping stands right now.</p>
+        <h3>Let’s tidy up the numbers</h3>
+        <p>
+          Tell us a little about your business and where your bookkeeping stands right now.
+          We’ll help you figure out the next best step.
+        </p>
 
         <form class="mini-form" action="mailto:info@boomtownbookkeeper.com" method="post" enctype="text/plain">
           <input type="text" name="name" placeholder="Your Name" required />
           <input type="email" name="email" placeholder="Your Email" required />
           <input type="text" name="business_name" placeholder="Business Name" />
-          <textarea name="message" placeholder="What do you need help with?" required></textarea>
-          <button type="submit" class="btn btn-primary">Start My Consultation</button>
+          <textarea name="message" placeholder="What kind of bookkeeping help do you need?" required></textarea>
+          <button type="submit" class="btn btn-primary">Start the Conversation</button>
         </form>
 
-        <div class="mini-note">
-          Prefer email or phone? Reach out directly at info@boomtownbookkeeper.com.
+        <div class="note">
+          Prefer to reach out directly? Email info@boomtownbookkeeper.com
         </div>
       </div>
     </div>
   </section>
 
-  <section class="trust-strip">
-    <div class="container trust-wrap">
-      <div class="trust-item">Clean Books</div>
-      <div class="trust-item">Monthly Reports</div>
-      <div class="trust-item">Better Visibility</div>
-      <div class="trust-item">Less Stress</div>
-    </div>
-  </section>
-
-  <section class="section" id="services">
+  <div class="floating-band">
     <div class="container">
-      <h2 class="section-title">Bookkeeping Services Built for Busy Business Owners</h2>
+      <div class="floating-wrap">
+        <div class="floating-item">
+          <strong>Clean Books</strong>
+          <span>Less clutter. More clarity.</span>
+        </div>
+        <div class="floating-item">
+          <strong>Monthly Support</strong>
+          <span>Consistent care for your numbers.</span>
+        </div>
+        <div class="floating-item">
+          <strong>Readable Reports</strong>
+          <span>Know where you stand each month.</span>
+        </div>
+        <div class="floating-item">
+          <strong>Peace of Mind</strong>
+          <span>Less guessing. Less stress.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="section soft-section" id="services">
+    <div class="container">
+      <div style="text-align:center;">
+        <div class="eyebrow">Services</div>
+      </div>
+      <h2 class="section-title">Bookkeeping with style, structure, and substance</h2>
       <p class="section-subtitle">
-        Whether you are behind on your books or simply want dependable monthly support,
-        Boomtown Bookkeeper helps bring order, clarity, and consistency to your financial records.
+        This isn’t stiff, cold bookkeeping. It’s thoughtful support designed to help your business feel more organized,
+        more confident, and more in control behind the scenes.
       </p>
 
       <div class="cards-3">
@@ -708,169 +774,211 @@
           <div class="icon">01</div>
           <h3>Monthly Bookkeeping</h3>
           <p>
-            Stay current with organized transaction tracking, categorization, and monthly bookkeeping support
-            designed to keep your records up to date.
+            Stay current with organized categorization, dependable monthly support,
+            and records that actually help you understand how your business is doing.
           </p>
         </div>
 
         <div class="card">
           <div class="icon">02</div>
-          <h3>Account Reconciliation</h3>
+          <h3>Catch-Up & Cleanup</h3>
           <p>
-            Keep your bank and credit card accounts aligned with your books so you can reduce errors
-            and improve financial accuracy.
+            If your books are behind, messy, or overwhelming, we help restore order
+            and get everything back into shape.
           </p>
         </div>
 
         <div class="card">
           <div class="icon">03</div>
-          <h3>Cleanup & Catch-Up</h3>
+          <h3>Reconciliations & Reports</h3>
           <p>
-            If your books are behind, disorganized, or overwhelming, we help clean things up
-            and get your financial records back into shape.
+            Keep accounts aligned and receive clearer financial visibility
+            so you can make decisions with more confidence.
           </p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section" id="offer" style="background: #f1f6fa;">
-    <div class="container offer-wrap">
+  <section class="section" id="offer">
+    <div class="container offer-grid">
       <div class="offer-box">
-        <h2 style="font-size: 2rem; color: var(--primary); margin-bottom: 12px;">Starter Bookkeeping Package</h2>
-        <p style="color: var(--muted); margin-bottom: 8px;">
-          A practical bookkeeping solution for small business owners who need cleaner books,
-          more consistency, and better visibility into their numbers.
+        <div class="eyebrow">Signature Offer</div>
+        <h2 style="font-size:2.4rem; line-height:1.06; margin-bottom:14px;">The Starter Bookkeeping Package</h2>
+        <p>
+          A polished, practical bookkeeping solution for small business owners who want cleaner books,
+          consistent support, and a calmer financial foundation.
         </p>
 
-        <div class="price-tag">Starting at $297/month</div>
+        <div class="price-pill">Starting at $297/month</div>
 
         <ul class="check-list">
-          <li>Monthly bookkeeping and transaction categorization</li>
+          <li>Monthly transaction categorization</li>
           <li>Bank and credit card reconciliation</li>
-          <li>Monthly financial summary</li>
-          <li>Clear communication and support</li>
-          <li>Organized records for better decisions</li>
+          <li>Monthly bookkeeping support</li>
+          <li>Simple financial summaries</li>
+          <li>Responsive communication</li>
         </ul>
 
-        <div style="margin-top: 24px;">
+        <div style="margin-top:24px;">
           <a href="#contact" class="btn btn-primary">Request Pricing & Next Steps</a>
         </div>
       </div>
 
       <div class="offer-box">
-        <h3 style="font-size: 1.55rem; margin-bottom: 12px;">Who This Is For</h3>
+        <h3>Who this is perfect for</h3>
         <ul class="check-list">
-          <li>Small business owners who want cleaner books</li>
-          <li>Business owners who are behind on bookkeeping</li>
-          <li>Companies that need consistent monthly reporting</li>
-          <li>Owners who want more clarity and less financial stress</li>
+          <li>Small business owners who want their books to look and feel more organized</li>
+          <li>Business owners who are behind and need help catching up</li>
+          <li>Service businesses that want consistent monthly support</li>
+          <li>Owners who want more clarity and less stress around the numbers</li>
         </ul>
 
-        <h3 style="font-size: 1.55rem; margin: 28px 0 12px;">Why It Matters</h3>
+        <h3 style="margin-top:26px;">What changes after support begins</h3>
         <ul class="check-list">
-          <li>Know where your business stands each month</li>
-          <li>Spend less time sorting through numbers</li>
-          <li>Reduce confusion and bookkeeping mistakes</li>
-          <li>Build a stronger financial foundation for growth</li>
+          <li>You stop wondering where things stand</li>
+          <li>Your books become cleaner and easier to manage</li>
+          <li>You gain a stronger financial rhythm month after month</li>
+          <li>Your business feels more orderly behind the scenes</li>
         </ul>
       </div>
     </div>
   </section>
 
-  <section class="section dark-section">
+  <section class="section accent-section">
     <div class="container">
-      <h2 class="section-title">Why Business Owners Reach Out to Us</h2>
+      <div style="text-align:center;">
+        <div class="eyebrow" style="background: rgba(255,255,255,0.14); border-color: rgba(255,255,255,0.18); color:#fff;">Why people reach out</div>
+      </div>
+      <h2 class="section-title">When the books feel heavy, messy, or unclear</h2>
       <p class="section-subtitle">
-        Most clients come to us when the numbers feel messy, unclear, behind, or harder to manage than they should be.
+        Most business owners contact us when the numbers no longer feel simple, and they want someone to bring calm and structure back into the picture.
       </p>
 
       <div class="cards-4">
-        <div class="dark-card">
-          <h3>Behind on Books</h3>
-          <p>Your bookkeeping has fallen behind and you need help getting current again.</p>
+        <div class="accent-card">
+          <h3>Behind on records</h3>
+          <p>Your bookkeeping slipped behind and now it feels harder to fix alone.</p>
         </div>
-
-        <div class="dark-card">
-          <h3>No Clear Reports</h3>
-          <p>You know money is moving, but you do not have a clean monthly picture.</p>
+        <div class="accent-card">
+          <h3>No monthly rhythm</h3>
+          <p>Money is moving, but there is no consistent system supporting it.</p>
         </div>
-
-        <div class="dark-card">
-          <h3>Too Much Stress</h3>
-          <p>Bookkeeping is pulling attention away from actually running the business.</p>
+        <div class="accent-card">
+          <h3>Too much mental clutter</h3>
+          <p>The books are draining your attention away from the business itself.</p>
         </div>
-
-        <div class="dark-card">
-          <h3>Need Better Order</h3>
-          <p>You want a cleaner, more consistent financial system behind the scenes.</p>
+        <div class="accent-card">
+          <h3>Need cleaner visibility</h3>
+          <p>You want clearer numbers, better order, and less second-guessing.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section" id="process">
+  <section class="section soft-section" id="process">
     <div class="container">
-      <h2 class="section-title">Our Simple 3-Step Process</h2>
+      <div style="text-align:center;">
+        <div class="eyebrow">Our process</div>
+      </div>
+      <h2 class="section-title">Simple, warm, and easy to start</h2>
       <p class="section-subtitle">
-        We keep the process straightforward so you can get help without unnecessary confusion.
+        We keep the process approachable so you can get help without feeling overwhelmed.
       </p>
 
-      <div class="steps">
-        <div class="card">
-          <div class="step-num">1</div>
-          <h3>Reach Out</h3>
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <h3>Reach out</h3>
           <p>
-            Tell us about your business, what is going on with your books, and where you need help.
+            Share where your bookkeeping stands right now and what kind of support you think you need.
           </p>
         </div>
 
-        <div class="card">
-          <div class="step-num">2</div>
-          <h3>Review Your Needs</h3>
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <h3>Review the needs</h3>
           <p>
-            We identify what support makes the most sense based on your current bookkeeping situation.
+            We look at your situation and identify the most practical next step for cleanup or ongoing support.
           </p>
         </div>
 
-        <div class="card">
-          <div class="step-num">3</div>
-          <h3>Get Organized</h3>
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <h3>Create order</h3>
           <p>
-            We help bring order to your books so you have cleaner records and more financial clarity going forward.
+            We help bring structure back to your books so you can move forward with more clarity and confidence.
           </p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section" style="background: #f1f6fa;">
+  <section class="section">
     <div class="container">
-      <h2 class="section-title">Who We Work With</h2>
+      <div style="text-align:center;">
+        <div class="eyebrow">Best fit clients</div>
+      </div>
+      <h2 class="section-title">Who we love working with</h2>
       <p class="section-subtitle">
-        Boomtown Bookkeeper is a strong fit for service-based businesses, local businesses, and owners who want cleaner financial systems.
+        Boomtown Bookkeeper is built for businesses that value order, professionalism, and a more beautiful back office.
       </p>
 
       <div class="cards-3">
         <div class="card">
-          <h3>Small Business Owners</h3>
+          <h3>Small business owners</h3>
           <p>
-            Stay organized, reduce administrative stress, and keep your financial records in better shape month after month.
+            Perfect for owners who want cleaner books, less admin stress, and more confidence around their numbers.
           </p>
         </div>
 
         <div class="card">
-          <h3>Real Estate & Property-Based Businesses</h3>
+          <h3>Service businesses</h3>
           <p>
-            Track incoming and outgoing money more clearly and maintain cleaner records behind the scenes.
+            Great for contractors, consultants, and operators who need dependable support month after month.
           </p>
         </div>
 
         <div class="card">
-          <h3>Service Businesses</h3>
+          <h3>Property-based businesses</h3>
           <p>
-            From contractors to consultants, we help business owners create more clarity around their books.
+            Helpful for real-estate and rental-related businesses that need more organized recordkeeping behind the scenes.
           </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section soft-section">
+    <div class="container">
+      <div style="text-align:center;">
+        <div class="eyebrow">Social proof</div>
+      </div>
+      <h2 class="section-title">Designed to feel different</h2>
+      <p class="section-subtitle">
+        A bookkeeping brand can feel polished, warm, and inviting while still being capable and professional.
+      </p>
+
+      <div class="cards-3">
+        <div class="card">
+          <p class="testimonial">
+            “Finally, bookkeeping support that feels organized, calm, and easy to understand.”
+          </p>
+          <div class="testimonial-name">Placeholder Client</div>
+        </div>
+
+        <div class="card">
+          <p class="testimonial">
+            “The process felt simple, the communication was clear, and the books stopped feeling overwhelming.”
+          </p>
+          <div class="testimonial-name">Placeholder Client</div>
+        </div>
+
+        <div class="card">
+          <p class="testimonial">
+            “It felt like someone brought order and breathing room back into the business.”
+          </p>
+          <div class="testimonial-name">Placeholder Client</div>
         </div>
       </div>
     </div>
@@ -878,73 +986,74 @@
 
   <section class="section" id="faq">
     <div class="container">
-      <h2 class="section-title">Frequently Asked Questions</h2>
+      <div style="text-align:center;">
+        <div class="eyebrow">FAQ</div>
+      </div>
+      <h2 class="section-title">Questions we hear often</h2>
       <p class="section-subtitle">
-        A few common questions from business owners considering bookkeeping support.
+        A few of the most common questions from business owners considering bookkeeping support.
       </p>
 
       <div class="faq-grid">
         <div class="faq-item">
-          <h3>Do you help if my books are behind?</h3>
+          <h3>Can you help if my books are behind?</h3>
           <p>
-            Yes. If your books are messy, behind, or need cleanup, that is one of the main situations we help with.
-          </p>
-        </div>
-
-        <div class="faq-item">
-          <h3>Do you only work with certain industries?</h3>
-          <p>
-            We primarily support small business owners who need dependable bookkeeping help and better financial organization.
+            Yes. Cleanup and catch-up work is one of the main reasons people reach out.
           </p>
         </div>
 
         <div class="faq-item">
           <h3>Do you offer monthly support?</h3>
           <p>
-            Yes. Ongoing monthly bookkeeping support is one of the core ways we help clients stay current and organized.
+            Yes. Ongoing monthly bookkeeping support is one of the core ways we help clients stay current.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Do I need to have everything organized first?</h3>
+          <p>
+            No. Many clients come in because things are not organized yet. That is exactly where support helps.
           </p>
         </div>
 
         <div class="faq-item">
           <h3>How do I get started?</h3>
           <p>
-            Fill out the consultation form below or reach out directly by email to start the conversation.
+            Fill out the contact form below or email directly to begin the conversation.
           </p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="cta-band">
-    <div class="container cta-band-wrap">
+  <section class="cta-ribbon">
+    <div class="container cta-wrap">
       <div>
-        <h3>Ready for cleaner books and less financial stress?</h3>
-        <p>Let’s talk about what your business needs and whether we are a good fit.</p>
+        <h3>Ready for books that feel lighter, cleaner, and more under control?</h3>
+        <p>Let’s talk about what your business needs next.</p>
       </div>
-      <a href="#contact" class="btn btn-primary">Book Your Consultation</a>
+      <a href="#contact" class="btn btn-cream">Book Your Consultation</a>
     </div>
   </section>
 
-  <section class="section" id="contact">
+  <section class="section soft-section" id="contact">
     <div class="container contact-grid">
-      <div class="card contact-info">
-        <h2 style="font-size: 2rem; color: var(--primary); margin-bottom: 14px;">Get In Touch</h2>
+      <div class="contact-card contact-info">
+        <div class="eyebrow">Contact</div>
+        <h3 style="font-size:2rem;">Let’s make the back office feel beautiful again</h3>
         <p>
-          Reach out to Boomtown Bookkeeper to discuss your current bookkeeping needs, cleanup work,
-          or monthly support.
+          Reach out to Boomtown Bookkeeper to talk about catch-up work, monthly bookkeeping,
+          or simply creating more order in your financial records.
         </p>
+
         <p><strong>Business Name:</strong> Boomtown Bookkeeper</p>
         <p><strong>Email:</strong> info@boomtownbookkeeper.com</p>
         <p><strong>Phone:</strong> (000) 000-0000</p>
         <p><strong>Location:</strong> Indiana, United States</p>
-        <p>
-          Use the form to tell us about your business and what kind of help you are looking for.
-        </p>
       </div>
 
-      <div class="card">
-        <h3 style="font-size: 1.55rem; margin-bottom: 14px;">Request a Consultation</h3>
-
+      <div class="contact-card">
+        <h3>Request a consultation</h3>
         <form class="contact-form" action="mailto:info@boomtownbookkeeper.com" method="post" enctype="text/plain">
           <div class="row">
             <input type="text" name="first_name" placeholder="First Name" required />
@@ -968,8 +1077,7 @@
           </div>
 
           <textarea name="message" placeholder="Tell us what kind of bookkeeping help you need" required></textarea>
-
-          <button type="submit" class="btn btn-primary">Submit Consultation Request</button>
+          <button type="submit" class="btn btn-primary">Send My Request</button>
         </form>
       </div>
     </div>
