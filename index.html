@@ -1,317 +1,1149 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Boomtown Bookkeeper</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Boomtown Bookkeeper | Clear Books. Better Decisions.</title>
+  <meta
+    name="description"
+    content="Boomtown Bookkeeper helps business owners clean up their books, stay organized, and gain clear financial visibility with dependable bookkeeping support."
+  />
+  <style>
+    :root {
+      /* Mojave palette */
+      --red-canyon: #c68a64;
+      --sun-baked: #d8b79c;
+      --dried-cactus: #8c8a6e;
+      --aeolian-sand: #d1a58c;
+      --wilderness: #b57c4f;
 
-<style>
-:root {
-  --red-canyon: #C68A64;
-  --sun-baked: #D8B79C;
-  --dried-cactus: #8C8A6E;
-  --aeolian-sand: #D1A58C;
-  --wilderness: #B57C4F;
+      /* neutrals */
+      --bg: #faf6f1;
+      --bg-soft: #f4ede6;
+      --card: rgba(255, 255, 255, 0.82);
+      --card-solid: #ffffff;
+      --text: #2f2b26;
+      --muted: #6f6a63;
+      --line: rgba(47, 43, 38, 0.10);
+      --white: #ffffff;
 
-  --bg: #FAF6F1;
-  --text: #2F2B26;
-  --muted: #6F6A63;
-  --white: #FFFFFF;
+      /* gradients using the full palette */
+      --hero-grad:
+        linear-gradient(135deg,
+          var(--dried-cactus) 0%,
+          var(--aeolian-sand) 36%,
+          var(--red-canyon) 68%,
+          var(--wilderness) 100%);
+      --accent-grad:
+        linear-gradient(135deg,
+          var(--red-canyon) 0%,
+          var(--wilderness) 55%,
+          var(--sun-baked) 100%);
+      --soft-grad:
+        linear-gradient(180deg, #fffaf5 0%, var(--bg) 100%);
 
-  --grad: linear-gradient(135deg, #C68A64, #B57C4F);
-  --shadow: 0 20px 40px rgba(0,0,0,0.08);
-  --radius: 18px;
-}
+      --shadow-lg: 0 24px 64px rgba(72, 56, 40, 0.14);
+      --shadow-md: 0 16px 34px rgba(72, 56, 40, 0.10);
+      --shadow-sm: 0 10px 22px rgba(72, 56, 40, 0.08);
 
-* {
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
+      --radius-xl: 28px;
+      --radius-lg: 22px;
+      --radius-md: 16px;
+      --radius-sm: 12px;
 
-body {
-  font-family: Arial, sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  line-height:1.6;
-}
+      --max: 1220px;
+    }
 
-.container {
-  width:90%;
-  max-width:1200px;
-  margin:auto;
-}
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-/* TOP BAR */
-.topbar {
-  background: var(--wilderness);
-  color: white;
-  padding: 10px 0;
-  font-size: 0.9rem;
-}
+    html {
+      scroll-behavior: smooth;
+    }
 
-.topbar .container {
-  display:flex;
-  justify-content:space-between;
-  flex-wrap:wrap;
-}
+    body {
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(198, 138, 100, 0.10), transparent 28%),
+        radial-gradient(circle at bottom right, rgba(140, 138, 110, 0.12), transparent 24%),
+        radial-gradient(circle at 80% 30%, rgba(209, 165, 140, 0.10), transparent 18%),
+        var(--soft-grad);
+      line-height: 1.6;
+    }
 
-/* NAV */
-header {
-  position: sticky;
-  top:0;
-  background: rgba(255,255,255,0.85);
-  backdrop-filter: blur(10px);
-  border-bottom:1px solid rgba(0,0,0,0.05);
-}
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-.nav {
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:18px 0;
-}
+    img {
+      display: block;
+      max-width: 100%;
+    }
 
-.logo {
-  font-weight:bold;
-  font-size:1.3rem;
-}
+    .container {
+      width: min(92%, var(--max));
+      margin: 0 auto;
+    }
 
-.nav a {
-  margin-left:20px;
-  font-weight:600;
-}
+    .section {
+      padding: 92px 0;
+    }
 
-/* HERO */
-.hero {
-  padding:100px 0;
-  background:
-    radial-gradient(circle at top right, rgba(198,138,100,0.15), transparent),
-    radial-gradient(circle at bottom left, rgba(140,138,110,0.15), transparent);
-}
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: rgba(198, 138, 100, 0.10);
+      border: 1px solid rgba(181, 124, 79, 0.18);
+      color: var(--wilderness);
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
 
-.hero h1 {
-  font-size:3rem;
-  margin-bottom:15px;
-}
+    .section-title {
+      font-size: 2.9rem;
+      line-height: 1.05;
+      text-align: center;
+      margin-bottom: 16px;
+    }
 
-.hero p {
-  color:var(--muted);
-  max-width:600px;
-  margin-bottom:25px;
-}
+    .section-subtitle {
+      max-width: 780px;
+      margin: 0 auto 52px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 1.08rem;
+    }
 
-/* BUTTON */
-.btn {
-  padding:14px 22px;
-  border-radius:999px;
-  border:none;
-  cursor:pointer;
-  font-weight:bold;
-}
+    .btn {
+      display: inline-block;
+      padding: 15px 24px;
+      border-radius: 14px;
+      border: none;
+      cursor: pointer;
+      font-weight: 800;
+      font-size: 1rem;
+      transition: 0.25s ease;
+      text-align: center;
+    }
 
-.btn-primary {
-  background: var(--grad);
-  color:white;
-}
+    .btn-primary {
+      background: var(--accent-grad);
+      color: var(--white);
+      box-shadow: 0 14px 28px rgba(181, 124, 79, 0.24);
+    }
 
-/* SECTION */
-.section {
-  padding:80px 0;
-}
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 34px rgba(181, 124, 79, 0.28);
+    }
 
-.section-title {
-  text-align:center;
-  font-size:2rem;
-  margin-bottom:10px;
-}
+    .btn-secondary {
+      background: rgba(255,255,255,0.16);
+      color: var(--white);
+      border: 1px solid rgba(255,255,255,0.28);
+      backdrop-filter: blur(10px);
+    }
 
-.section-sub {
-  text-align:center;
-  color:var(--muted);
-  margin-bottom:40px;
-}
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.22);
+    }
 
-/* CARDS */
-.grid {
-  display:grid;
-  grid-template-columns: repeat(3,1fr);
-  gap:20px;
-}
+    .btn-light {
+      background: var(--white);
+      color: var(--wilderness);
+      box-shadow: var(--shadow-sm);
+    }
 
-.card {
-  background:white;
-  padding:25px;
-  border-radius:var(--radius);
-  box-shadow:var(--shadow);
-}
+    .btn-light:hover {
+      transform: translateY(-2px);
+    }
 
-.card h3 {
-  margin-bottom:10px;
-}
+    .topbar {
+      background: linear-gradient(90deg, var(--dried-cactus), var(--wilderness), var(--red-canyon));
+      color: var(--white);
+      padding: 12px 0;
+      font-size: 0.92rem;
+    }
 
-/* OFFER */
-.offer {
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:30px;
-}
+    .topbar-wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
 
-.offer-box {
-  background:white;
-  padding:30px;
-  border-radius:var(--radius);
-  box-shadow:var(--shadow);
-}
+    .topbar a {
+      color: var(--white);
+      font-weight: 700;
+    }
 
-/* CTA */
-.cta {
-  background: var(--grad);
-  color:white;
-  text-align:center;
-  padding:60px 0;
-}
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      background: rgba(255, 250, 245, 0.86);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+    }
 
-/* CONTACT */
-.contact {
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:30px;
-}
+    .nav {
+      min-height: 84px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
 
-input, textarea {
-  width:100%;
-  padding:12px;
-  margin-bottom:10px;
-  border-radius:10px;
-  border:1px solid #ddd;
-}
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
 
-/* FOOTER */
-footer {
-  text-align:center;
-  padding:30px;
-  background:#eee;
-}
+    .brand-mark {
+      width: 56px;
+      height: 56px;
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      color: var(--white);
+      font-size: 1.08rem;
+      font-weight: 900;
+      background:
+        linear-gradient(135deg,
+          var(--red-canyon) 0%,
+          var(--aeolian-sand) 35%,
+          var(--dried-cactus) 70%,
+          var(--wilderness) 100%);
+      box-shadow: var(--shadow-sm);
+    }
 
-/* MOBILE */
-@media(max-width:900px){
-  .grid, .offer, .contact {
-    grid-template-columns:1fr;
-  }
+    .brand-text {
+      line-height: 1.05;
+    }
 
-  .hero h1 {
-    font-size:2rem;
-  }
-}
-</style>
+    .brand-text strong {
+      display: block;
+      font-size: 1.15rem;
+      letter-spacing: 0.2px;
+    }
+
+    .brand-text span {
+      display: block;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      font-weight: 700;
+    }
+
+    .nav-links a:hover {
+      color: var(--wilderness);
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 15% 15%, rgba(216,183,156,0.22), transparent 18%),
+        radial-gradient(circle at 85% 20%, rgba(209,165,140,0.20), transparent 18%),
+        radial-gradient(circle at 80% 80%, rgba(198,138,100,0.18), transparent 20%),
+        var(--hero-grad);
+      color: var(--white);
+      padding: 108px 0 92px;
+    }
+
+    .hero .container {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 34px;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-size: 4rem;
+      line-height: 0.96;
+      margin-bottom: 18px;
+      max-width: 800px;
+    }
+
+    .hero p {
+      max-width: 700px;
+      margin-bottom: 28px;
+      color: rgba(255,255,255,0.92);
+      font-size: 1.1rem;
+    }
+
+    .hero-points {
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px 16px;
+      margin-bottom: 30px;
+    }
+
+    .hero-points li {
+      position: relative;
+      padding-left: 28px;
+      font-weight: 700;
+      color: rgba(255,255,255,0.96);
+    }
+
+    .hero-points li::before {
+      content: "✦";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: #fff2df;
+      font-size: 1rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .glass-card,
+    .card,
+    .offer-box,
+    .step-card,
+    .faq-item,
+    .contact-card,
+    .stat-box {
+      background: var(--card);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255,255,255,0.42);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-md);
+    }
+
+    .hero-card {
+      padding: 30px;
+    }
+
+    .hero-card h3 {
+      color: var(--text);
+      font-size: 1.7rem;
+      margin-bottom: 10px;
+    }
+
+    .hero-card p {
+      color: var(--muted);
+      margin-bottom: 18px;
+      font-size: 0.98rem;
+    }
+
+    .mini-form,
+    .contact-form {
+      display: grid;
+      gap: 12px;
+    }
+
+    .mini-form input,
+    .mini-form textarea,
+    .contact-form input,
+    .contact-form textarea,
+    .contact-form select {
+      width: 100%;
+      padding: 15px 16px;
+      border-radius: 14px;
+      border: 1px solid rgba(47, 43, 38, 0.10);
+      background: rgba(255,255,255,0.94);
+      color: var(--text);
+      font-size: 1rem;
+      font-family: inherit;
+      outline: none;
+    }
+
+    .mini-form input:focus,
+    .mini-form textarea:focus,
+    .contact-form input:focus,
+    .contact-form textarea:focus,
+    .contact-form select:focus {
+      border-color: rgba(181, 124, 79, 0.35);
+      box-shadow: 0 0 0 4px rgba(198, 138, 100, 0.10);
+    }
+
+    .mini-form textarea,
+    .contact-form textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .note {
+      color: var(--muted);
+      font-size: 0.88rem;
+      margin-top: 4px;
+    }
+
+    .floating-band {
+      margin-top: -34px;
+      position: relative;
+      z-index: 5;
+    }
+
+    .floating-wrap {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      padding: 20px;
+      border-radius: 28px;
+      background: rgba(255, 250, 245, 0.72);
+      backdrop-filter: blur(18px);
+      border: 1px solid rgba(255,255,255,0.55);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .stat-box {
+      padding: 22px 18px;
+      text-align: center;
+      background: linear-gradient(180deg, rgba(255,255,255,0.88), rgba(255,255,255,0.68));
+    }
+
+    .stat-box:nth-child(1) strong { color: var(--red-canyon); }
+    .stat-box:nth-child(2) strong { color: var(--dried-cactus); }
+    .stat-box:nth-child(3) strong { color: var(--aeolian-sand); }
+    .stat-box:nth-child(4) strong { color: var(--wilderness); }
+
+    .stat-box strong {
+      display: block;
+      font-size: 1.08rem;
+      margin-bottom: 6px;
+    }
+
+    .stat-box span {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .cards-3,
+    .cards-4,
+    .steps-grid,
+    .faq-grid,
+    .contact-grid,
+    .offer-grid {
+      display: grid;
+      gap: 24px;
+    }
+
+    .cards-3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .cards-4 {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .steps-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .faq-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .contact-grid {
+      grid-template-columns: 0.95fr 1.05fr;
+      align-items: start;
+    }
+
+    .offer-grid {
+      grid-template-columns: 1fr 0.95fr;
+      align-items: start;
+    }
+
+    .card,
+    .offer-box,
+    .step-card,
+    .faq-item,
+    .contact-card {
+      padding: 30px;
+    }
+
+    .card h3,
+    .offer-box h3,
+    .step-card h3,
+    .faq-item h3,
+    .contact-card h3 {
+      font-size: 1.35rem;
+      margin-bottom: 12px;
+    }
+
+    .card p,
+    .offer-box p,
+    .step-card p,
+    .faq-item p,
+    .contact-card p {
+      color: var(--muted);
+    }
+
+    .icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      color: var(--white);
+      margin-bottom: 16px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .icon.one   { background: linear-gradient(135deg, var(--red-canyon), var(--wilderness)); }
+    .icon.two   { background: linear-gradient(135deg, var(--dried-cactus), var(--sun-baked)); color: var(--text); }
+    .icon.three { background: linear-gradient(135deg, var(--aeolian-sand), var(--red-canyon)); }
+    .icon.four  { background: linear-gradient(135deg, var(--wilderness), var(--dried-cactus)); }
+
+    .soft-section {
+      background:
+        radial-gradient(circle at top right, rgba(216,183,156,0.10), transparent 22%),
+        radial-gradient(circle at bottom left, rgba(140,138,110,0.10), transparent 22%),
+        linear-gradient(180deg, rgba(255,255,255,0.35), rgba(244,237,230,0.72));
+    }
+
+    .dark-section {
+      background:
+        radial-gradient(circle at top left, rgba(216,183,156,0.12), transparent 18%),
+        radial-gradient(circle at bottom right, rgba(209,165,140,0.14), transparent 18%),
+        linear-gradient(135deg, var(--dried-cactus) 0%, var(--wilderness) 55%, var(--red-canyon) 100%);
+      color: var(--white);
+    }
+
+    .dark-section .section-title,
+    .dark-section .section-subtitle,
+    .dark-section h3,
+    .dark-section p {
+      color: var(--white);
+    }
+
+    .dark-card {
+      padding: 26px;
+      border-radius: var(--radius-lg);
+      background: rgba(255,255,255,0.10);
+      border: 1px solid rgba(255,255,255,0.14);
+      backdrop-filter: blur(10px);
+    }
+
+    .price-pill {
+      display: inline-block;
+      margin: 18px 0 22px;
+      padding: 11px 16px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, rgba(216,183,156,0.26), rgba(198,138,100,0.14));
+      border: 1px solid rgba(181,124,79,0.14);
+      color: var(--wilderness);
+      font-weight: 900;
+    }
+
+    .check-list {
+      list-style: none;
+      display: grid;
+      gap: 12px;
+      margin-top: 8px;
+    }
+
+    .check-list li {
+      position: relative;
+      padding-left: 28px;
+      color: var(--text);
+    }
+
+    .check-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--dried-cactus);
+      font-weight: 900;
+    }
+
+    .step-number {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: var(--white);
+      font-weight: 900;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, var(--red-canyon), var(--wilderness));
+      box-shadow: 0 14px 24px rgba(181, 124, 79, 0.22);
+    }
+
+    .testimonial {
+      font-style: italic;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+
+    .testimonial-name {
+      font-weight: 900;
+      color: var(--wilderness);
+    }
+
+    .faq-item h3 {
+      font-size: 1.1rem;
+    }
+
+    .contact-info p {
+      margin-bottom: 14px;
+      color: var(--muted);
+    }
+
+    .contact-info strong {
+      color: var(--text);
+    }
+
+    .contact-form .row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .cta-ribbon {
+      background: linear-gradient(135deg, var(--red-canyon) 0%, var(--wilderness) 45%, var(--sun-baked) 100%);
+      color: var(--white);
+      padding: 30px 0;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.12);
+    }
+
+    .cta-wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .cta-wrap h3 {
+      font-size: 1.8rem;
+      line-height: 1.05;
+      margin-bottom: 6px;
+    }
+
+    .cta-wrap p {
+      opacity: 0.95;
+    }
+
+    footer {
+      background: #e9dfcf;
+      color: var(--text);
+      text-align: center;
+      padding: 36px 0;
+      font-size: 0.95rem;
+      border-top: 1px solid var(--line);
+    }
+
+    @media (max-width: 1080px) {
+      .hero-grid,
+      .offer-grid,
+      .contact-grid,
+      .faq-grid,
+      .cards-4,
+      .cards-3,
+      .steps-grid,
+      .floating-wrap {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-points,
+      .contact-form .row {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        font-size: 3rem;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 14px 0;
+      }
+
+      .nav-links {
+        gap: 14px;
+      }
+
+      .hero {
+        padding: 82px 0 68px;
+      }
+
+      .hero h1 {
+        font-size: 2.3rem;
+      }
+
+      .section {
+        padding: 74px 0;
+      }
+
+      .section-title {
+        font-size: 2.15rem;
+      }
+
+      .hero-actions .btn,
+      .cta-wrap .btn,
+      .nav-links .btn {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
-
 <body>
 
-<!-- TOP BAR -->
-<div class="topbar">
-  <div class="container">
-    <div>Clean books. Clear decisions.</div>
-    <div>
-      📞 <a href="tel:17656643558" style="color:white;">(765) 664-3558</a>
-    </div>
-  </div>
-</div>
-
-<header>
-  <div class="container nav">
-    <div class="logo">Boomtown Bookkeeper</div>
-    <div>
-      <a href="#services">Services</a>
-      <a href="#contact">Contact</a>
-    </div>
-  </div>
-</header>
-
-<section class="hero">
-  <div class="container">
-    <h1>Clear books. Better decisions.</h1>
-    <p>We help business owners clean up their numbers, stay organized, and gain real clarity.</p>
-    <a href="#contact" class="btn btn-primary">Get Started</a>
-  </div>
-</section>
-
-<section class="section" id="services">
-  <div class="container">
-    <h2 class="section-title">Services</h2>
-    <p class="section-sub">Everything you need to stay organized and in control</p>
-
-    <div class="grid">
-      <div class="card">
-        <h3>Monthly Bookkeeping</h3>
-        <p>Stay current with consistent tracking and categorization.</p>
-      </div>
-
-      <div class="card">
-        <h3>Cleanup & Catch-Up</h3>
-        <p>Get your books back on track quickly and efficiently.</p>
-      </div>
-
-      <div class="card">
-        <h3>Reconciliation</h3>
-        <p>Ensure your accounts are accurate and aligned.</p>
+  <div class="topbar">
+    <div class="container topbar-wrap">
+      <div>Clean books. Clear visibility. Better business decisions.</div>
+      <div>
+        Call <a href="tel:17656643558">(765) 664-3558</a>
       </div>
     </div>
   </div>
-</section>
 
-<section class="section">
-  <div class="container offer">
-    <div class="offer-box">
-      <h2>Starter Package</h2>
-      <p>Perfect for businesses needing clean, consistent bookkeeping.</p>
-      <p><strong>Starting at $297/month</strong></p>
+  <header>
+    <div class="container nav">
+      <a href="#" class="brand">
+        <div class="brand-mark">BB</div>
+        <div class="brand-text">
+          <strong>Boomtown Bookkeeper</strong>
+          <span>Clear books. Better decisions.</span>
+        </div>
+      </a>
+
+      <nav class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#offer">Offer</a>
+        <a href="#process">Process</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact" class="btn btn-primary">Get Started</a>
+      </nav>
     </div>
+  </header>
 
-    <div class="offer-box">
-      <h3>Includes</h3>
-      <ul>
-        <li>Monthly tracking</li>
-        <li>Reconciliation</li>
-        <li>Financial summaries</li>
-        <li>Ongoing support</li>
-      </ul>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow">Bookkeeping for growing businesses</div>
+        <h1>Get your books organized and your business moving forward.</h1>
+        <p>
+          Boomtown Bookkeeper helps business owners clean up the numbers, stay current each month,
+          and gain the clarity they need to operate with more confidence and less stress.
+        </p>
+
+        <ul class="hero-points">
+          <li>Monthly bookkeeping support</li>
+          <li>Catch-up and cleanup work</li>
+          <li>Account reconciliations</li>
+          <li>Clear financial visibility</li>
+        </ul>
+
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-primary">Request a Consultation</a>
+          <a href="#offer" class="btn btn-secondary">See What’s Included</a>
+        </div>
+      </div>
+
+      <div class="glass-card hero-card">
+        <h3>Let’s get the numbers under control</h3>
+        <p>
+          Tell us where your bookkeeping stands right now and what kind of support your business needs.
+        </p>
+
+        <form class="mini-form" action="mailto:info@boomtownbookkeeper.com" method="post" enctype="text/plain">
+          <input type="text" name="name" placeholder="Your Name" required />
+          <input type="email" name="email" placeholder="Your Email" required />
+          <input type="text" name="business_name" placeholder="Business Name" />
+          <textarea name="message" placeholder="What do you need help with?" required></textarea>
+          <button type="submit" class="btn btn-primary">Start My Consultation</button>
+        </form>
+
+        <div class="note">Prefer direct contact? Call (765) 664-3558 or email info@boomtownbookkeeper.com</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="floating-band">
+    <div class="container">
+      <div class="floating-wrap">
+        <div class="stat-box">
+          <strong>Clean Books</strong>
+          <span>Less confusion behind the scenes</span>
+        </div>
+        <div class="stat-box">
+          <strong>Monthly Support</strong>
+          <span>Consistent bookkeeping rhythm</span>
+        </div>
+        <div class="stat-box">
+          <strong>Clear Reports</strong>
+          <span>Know where the business stands</span>
+        </div>
+        <div class="stat-box">
+          <strong>More Control</strong>
+          <span>Operate with better visibility</span>
+        </div>
+      </div>
     </div>
   </div>
-</section>
 
-<section class="cta">
-  <div class="container">
-    <h2>Ready to get your books under control?</h2>
-    <p>Call or request a consultation today.</p>
-    <br>
-    <a href="tel:17656643558" class="btn btn-light" style="background:white; color:#B57C4F;">Call (765) 664-3558</a>
-  </div>
-</section>
+  <section class="section soft-section" id="services">
+    <div class="container">
+      <div style="text-align:center;">
+        <div class="eyebrow">Services</div>
+      </div>
+      <h2 class="section-title">Bookkeeping support built for real business owners</h2>
+      <p class="section-subtitle">
+        Whether your books are behind, inconsistent, or simply taking too much of your time,
+        Boomtown Bookkeeper helps create order, accuracy, and a stronger financial foundation.
+      </p>
 
-<section class="section" id="contact">
-  <div class="container contact">
-    <div>
-      <h2>Contact</h2>
-      <p><strong>Phone:</strong> <a href="tel:17656643558">(765) 664-3558</a></p>
-      <p><strong>Email:</strong> info@boomtownbookkeeper.com</p>
+      <div class="cards-3">
+        <div class="card">
+          <div class="icon one">01</div>
+          <h3>Monthly Bookkeeping</h3>
+          <p>
+            Stay current with consistent transaction tracking, categorization, and monthly bookkeeping support.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="icon two">02</div>
+          <h3>Cleanup & Catch-Up</h3>
+          <p>
+            If your books are behind or disorganized, we help get everything back in shape and moving in the right direction.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="icon three">03</div>
+          <h3>Reconciliations & Reporting</h3>
+          <p>
+            Keep bank and credit card accounts aligned and gain a clearer monthly picture of your business performance.
+          </p>
+        </div>
+      </div>
     </div>
+  </section>
 
-    <div>
-      <form action="mailto:info@boomtownbookkeeper.com" method="post" enctype="text/plain">
-        <input type="text" name="name" placeholder="Name" required>
-        <input type="email" name="email" placeholder="Email" required>
-        <textarea name="message" placeholder="How can we help?" required></textarea>
-        <button class="btn btn-primary">Send</button>
-      </form>
+  <section class="section" id="offer">
+    <div class="container offer-grid">
+      <div class="offer-box">
+        <div class="eyebrow">Offer</div>
+        <h2 style="font-size:2.4rem; line-height:1.04; margin-bottom:14px;">Starter Bookkeeping Package</h2>
+        <p>
+          A practical solution for businesses that need cleaner books, more consistency,
+          and better financial visibility without the overwhelm.
+        </p>
+
+        <div class="price-pill">Starting at $297/month</div>
+
+        <ul class="check-list">
+          <li>Monthly transaction categorization</li>
+          <li>Bank and credit card reconciliation</li>
+          <li>Monthly bookkeeping support</li>
+          <li>Financial summary reporting</li>
+          <li>Clear communication throughout the process</li>
+        </ul>
+
+        <div style="margin-top:24px;">
+          <a href="#contact" class="btn btn-primary">Request Pricing & Next Steps</a>
+        </div>
+      </div>
+
+      <div class="offer-box">
+        <h3>Best fit for</h3>
+        <ul class="check-list">
+          <li>Small business owners who want cleaner books</li>
+          <li>Businesses that are behind on bookkeeping</li>
+          <li>Owners who want dependable monthly support</li>
+          <li>Companies that need clearer financial visibility</li>
+        </ul>
+
+        <h3 style="margin-top:26px;">What improves</h3>
+        <ul class="check-list">
+          <li>You spend less time sorting through the numbers</li>
+          <li>Your books become more organized and easier to manage</li>
+          <li>You gain a clearer view of what is happening each month</li>
+          <li>Your business operates with more structure and control</li>
+        </ul>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<footer>
-  <p>&copy; 2026 Boomtown Bookkeeper</p>
-</footer>
+  <section class="section dark-section">
+    <div class="container">
+      <div style="text-align:center;">
+        <div class="eyebrow" style="background: rgba(255,255,255,0.12); border-color: rgba(255,255,255,0.16); color:#ffffff;">Why clients reach out</div>
+      </div>
+      <h2 class="section-title">Most businesses come to us when the books feel messy, unclear, or behind</h2>
+      <p class="section-subtitle">
+        We help remove the clutter, tighten the system, and give business owners a cleaner view of what is going on financially.
+      </p>
+
+      <div class="cards-4">
+        <div class="dark-card">
+          <h3>Behind on bookkeeping</h3>
+          <p>The records have fallen behind and need real cleanup.</p>
+        </div>
+        <div class="dark-card">
+          <h3>No clear monthly picture</h3>
+          <p>Money is moving, but there is no simple view of how the business is doing.</p>
+        </div>
+        <div class="dark-card">
+          <h3>Too much time lost</h3>
+          <p>Bookkeeping is taking attention away from actually running the business.</p>
+        </div>
+        <div class="dark-card">
+          <h3>Need more control</h3>
+          <p>The business needs stronger systems and cleaner financial organization.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section soft-section" id="process">
+    <div class="container">
+      <div style="text-align:center;">
+        <div class="eyebrow">Process</div>
+      </div>
+      <h2 class="section-title">A straightforward process from start to finish</h2>
+      <p class="section-subtitle">
+        We keep the process simple so you can get support quickly and move forward with clarity.
+      </p>
+
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <h3>Reach out</h3>
+          <p>
+            Tell us about your business and where your bookkeeping stands right now.
+          </p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <h3>Review the needs</h3>
+          <p>
+            We identify the right next step based on whether you need cleanup, catch-up, or ongoing monthly support.
+          </p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <h3>Get organized</h3>
+          <p>
+            We help bring structure to your books so the business has cleaner records and better financial visibility.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div style="text-align:center;">
+        <div class="eyebrow">Who we work with</div>
+      </div>
+      <h2 class="section-title">A strong fit for businesses that want clarity and consistency</h2>
+      <p class="section-subtitle">
+        Boomtown Bookkeeper supports businesses that want a cleaner back office and a more organized financial system.
+      </p>
+
+      <div class="cards-3">
+        <div class="card">
+          <div class="icon four">A</div>
+          <h3>Small Business Owners</h3>
+          <p>
+            Ideal for owners who want stronger organization and less bookkeeping stress month after month.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="icon one">B</div>
+          <h3>Service Businesses</h3>
+          <p>
+            Great for contractors, consultants, and operators who need dependable bookkeeping support.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="icon three">C</div>
+          <h3>Property-Based Businesses</h3>
+          <p>
+            Helpful for businesses that need more structure around income, expenses, and ongoing records.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section soft-section">
+    <div class="container">
+      <div style="text-align:center;">
+        <div class="eyebrow">Social proof</div>
+      </div>
+      <h2 class="section-title">A sharper, simpler bookkeeping experience</h2>
+      <p class="section-subtitle">
+        Replace these placeholders with real testimonials once you start collecting them.
+      </p>
+
+      <div class="cards-3">
+        <div class="card">
+          <p class="testimonial">
+            “The process was clear, professional, and far less overwhelming than trying to sort through everything ourselves.”
+          </p>
+          <div class="testimonial-name">Placeholder Client</div>
+        </div>
+
+        <div class="card">
+          <p class="testimonial">
+            “Our books became more organized, the numbers started making sense again, and we had a much better handle on the business.”
+          </p>
+          <div class="testimonial-name">Placeholder Client</div>
+        </div>
+
+        <div class="card">
+          <p class="testimonial">
+            “Boomtown Bookkeeper helped bring order back into the financial side of the business.”
+          </p>
+          <div class="testimonial-name">Placeholder Client</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="container">
+      <div style="text-align:center;">
+        <div class="eyebrow">FAQ</div>
+      </div>
+      <h2 class="section-title">Questions we hear all the time</h2>
+      <p class="section-subtitle">
+        A few common questions from business owners considering bookkeeping support.
+      </p>
+
+      <div class="faq-grid">
+        <div class="faq-item">
+          <h3>Can you help if my books are behind?</h3>
+          <p>
+            Yes. Cleanup and catch-up work is one of the main reasons businesses reach out.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Do you offer ongoing monthly support?</h3>
+          <p>
+            Yes. Monthly bookkeeping support is one of the core services we provide.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Do I need to have everything organized first?</h3>
+          <p>
+            No. Many clients come to us because things are not organized yet.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>How do I get started?</h3>
+          <p>
+            Fill out the consultation form below, call us directly, or email to begin the conversation.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-ribbon">
+    <div class="container cta-wrap">
+      <div>
+        <h3>Ready to get your books cleaned up and under control?</h3>
+        <p>Call (765) 664-3558 or request a consultation today.</p>
+      </div>
+      <a href="#contact" class="btn btn-light">Book Your Consultation</a>
+    </div>
+  </section>
+
+  <section class="section soft-section" id="contact">
+    <div class="container contact-grid">
+      <div class="contact-card contact-info">
+        <div class="eyebrow">Contact</div>
+        <h3 style="font-size:2rem;">Let’s talk about your bookkeeping needs</h3>
+        <p>
+          Reach out to Boomtown Bookkeeper to discuss catch-up work, monthly bookkeeping,
+          or building a cleaner financial system for your business.
+        </p>
+
+        <p><strong>Business Name:</strong> Boomtown Bookkeeper</p>
+        <p><strong>Phone:</strong> <a href="tel:17656643558">(765) 664-3558</a></p>
+        <p><strong>Email:</strong> info@boomtownbookkeeper.com</p>
+        <p><strong>Location:</strong> Indiana, United States</p>
+      </div>
+
+      <div class="contact-card">
+        <h3>Request a consultation</h3>
+
+        <form class="contact-form" action="mailto:info@boomtownbookkeeper.com" method="post" enctype="text/plain">
+          <div class="row">
+            <input type="text" name="first_name" placeholder="First Name" required />
+            <input type="text" name="last_name" placeholder="Last Name" required />
+          </div>
+
+          <div class="row">
+            <input type="email" name="email" placeholder="Email Address" required />
+            <input type="text" name="phone" placeholder="Phone Number" />
+          </div>
+
+          <div class="row">
+            <input type="text" name="business_name" placeholder="Business Name" />
+            <select name="bookkeeping_status">
+              <option value="">Current bookkeeping status</option>
+              <option>Books are up to date</option>
+              <option>A little behind</option>
+              <option>Several months behind</option>
+              <option>Need full cleanup</option>
+            </select>
+          </div>
+
+          <textarea name="message" placeholder="Tell us what kind of bookkeeping help you need" required></textarea>
+          <button type="submit" class="btn btn-primary">Send My Request</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Boomtown Bookkeeper. All rights reserved.</p>
+    </div>
+  </footer>
 
 </body>
 </html>
